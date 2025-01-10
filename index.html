@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="fr-FR" class="no-js" itemtype="https://schema.org/WebPage" itemscope>
+
+<head>
+	<meta charset="UTF-8">
+	<script>if (navigator.userAgent.match(/MSIE|Internet Explorer/i) || navigator.userAgent.match(/Trident\/7\..*?rv:11/i)) { var href = document.location.href; if (!href.match(/[?&]nowprocket/)) { if (href.indexOf("?") == -1) { if (href.indexOf("#") == -1) { document.location.href = href + "?nowprocket=1" } else { document.location.href = href.replace("#", "?nowprocket=1#") } } else { if (href.indexOf("#") == -1) { document.location.href = href + "&nowprocket=1" } else { document.location.href = href.replace("#", "&nowprocket=1#") } } } }</script>
+	<script>(() => { class RocketLazyLoadScripts { constructor() { this.v = "1.2.6", this.triggerEvents = ["keydown", "mousedown", "mousemove", "touchmove", "touchstart", "touchend", "wheel"], this.userEventHandler = this.t.bind(this), this.touchStartHandler = this.i.bind(this), this.touchMoveHandler = this.o.bind(this), this.touchEndHandler = this.h.bind(this), this.clickHandler = this.u.bind(this), this.interceptedClicks = [], this.interceptedClickListeners = [], this.l(this), window.addEventListener("pageshow", (t => { this.persisted = t.persisted, this.everythingLoaded && this.m() })), this.CSPIssue = sessionStorage.getItem("rocketCSPIssue"), document.addEventListener("securitypolicyviolation", (t => { this.CSPIssue || "script-src-elem" !== t.violatedDirective || "data" !== t.blockedURI || (this.CSPIssue = !0, sessionStorage.setItem("rocketCSPIssue", !0)) })), document.addEventListener("DOMContentLoaded", (() => { this.k() })), this.delayedScripts = { normal: [], async: [], defer: [] }, this.trash = [], this.allJQueries = [] } p(t) { document.hidden ? t.t() : (this.triggerEvents.forEach((e => window.addEventListener(e, t.userEventHandler, { passive: !0 }))), window.addEventListener("touchstart", t.touchStartHandler, { passive: !0 }), window.addEventListener("mousedown", t.touchStartHandler), document.addEventListener("visibilitychange", t.userEventHandler)) } _() { this.triggerEvents.forEach((t => window.removeEventListener(t, this.userEventHandler, { passive: !0 }))), document.removeEventListener("visibilitychange", this.userEventHandler) } i(t) { "HTML" !== t.target.tagName && (window.addEventListener("touchend", this.touchEndHandler), window.addEventListener("mouseup", this.touchEndHandler), window.addEventListener("touchmove", this.touchMoveHandler, { passive: !0 }), window.addEventListener("mousemove", this.touchMoveHandler), t.target.addEventListener("click", this.clickHandler), this.L(t.target, !0), this.S(t.target, "onclick", "rocket-onclick"), this.C()) } o(t) { window.removeEventListener("touchend", this.touchEndHandler), window.removeEventListener("mouseup", this.touchEndHandler), window.removeEventListener("touchmove", this.touchMoveHandler, { passive: !0 }), window.removeEventListener("mousemove", this.touchMoveHandler), t.target.removeEventListener("click", this.clickHandler), this.L(t.target, !1), this.S(t.target, "rocket-onclick", "onclick"), this.M() } h() { window.removeEventListener("touchend", this.touchEndHandler), window.removeEventListener("mouseup", this.touchEndHandler), window.removeEventListener("touchmove", this.touchMoveHandler, { passive: !0 }), window.removeEventListener("mousemove", this.touchMoveHandler) } u(t) { t.target.removeEventListener("click", this.clickHandler), this.L(t.target, !1), this.S(t.target, "rocket-onclick", "onclick"), this.interceptedClicks.push(t), t.preventDefault(), t.stopPropagation(), t.stopImmediatePropagation(), this.M() } O() { window.removeEventListener("touchstart", this.touchStartHandler, { passive: !0 }), window.removeEventListener("mousedown", this.touchStartHandler), this.interceptedClicks.forEach((t => { t.target.dispatchEvent(new MouseEvent("click", { view: t.view, bubbles: !0, cancelable: !0 })) })) } l(t) { EventTarget.prototype.addEventListenerWPRocketBase = EventTarget.prototype.addEventListener, EventTarget.prototype.addEventListener = function (e, i, o) { "click" !== e || t.windowLoaded || i === t.clickHandler || t.interceptedClickListeners.push({ target: this, func: i, options: o }), (this || window).addEventListenerWPRocketBase(e, i, o) } } L(t, e) { this.interceptedClickListeners.forEach((i => { i.target === t && (e ? t.removeEventListener("click", i.func, i.options) : t.addEventListener("click", i.func, i.options)) })), t.parentNode !== document.documentElement && this.L(t.parentNode, e) } D() { return new Promise((t => { this.P ? this.M = t : t() })) } C() { this.P = !0 } M() { this.P = !1 } S(t, e, i) { t.hasAttribute && t.hasAttribute(e) && (event.target.setAttribute(i, event.target.getAttribute(e)), event.target.removeAttribute(e)) } t() { this._(this), "loading" === document.readyState ? document.addEventListener("DOMContentLoaded", this.R.bind(this)) : this.R() } k() { let t = []; document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach((e => { let i = e.getAttribute("data-rocket-src"); if (i && !i.startsWith("data:")) { 0 === i.indexOf("//") && (i = location.protocol + i); try { const o = new URL(i).origin; o !== location.origin && t.push({ src: o, crossOrigin: e.crossOrigin || "module" === e.getAttribute("data-rocket-type") }) } catch (t) { } } })), t = [...new Map(t.map((t => [JSON.stringify(t), t]))).values()], this.T(t, "preconnect") } async R() { this.lastBreath = Date.now(), this.j(this), this.F(this), this.I(), this.W(), this.q(), await this.A(this.delayedScripts.normal), await this.A(this.delayedScripts.defer), await this.A(this.delayedScripts.async); try { await this.U(), await this.H(this), await this.J() } catch (t) { console.error(t) } window.dispatchEvent(new Event("rocket-allScriptsLoaded")), this.everythingLoaded = !0, this.D().then((() => { this.O() })), this.N() } W() { document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t => { t.hasAttribute("data-rocket-src") ? t.hasAttribute("async") && !1 !== t.async ? this.delayedScripts.async.push(t) : t.hasAttribute("defer") && !1 !== t.defer || "module" === t.getAttribute("data-rocket-type") ? this.delayedScripts.defer.push(t) : this.delayedScripts.normal.push(t) : this.delayedScripts.normal.push(t) })) } async B(t) { if (await this.G(), !0 !== t.noModule || !("noModule" in HTMLScriptElement.prototype)) return new Promise((e => { let i; function o() { (i || t).setAttribute("data-rocket-status", "executed"), e() } try { if (navigator.userAgent.indexOf("Firefox/") > 0 || "" === navigator.vendor || this.CSPIssue) i = document.createElement("script"), [...t.attributes].forEach((t => { let e = t.nodeName; "type" !== e && ("data-rocket-type" === e && (e = "type"), "data-rocket-src" === e && (e = "src"), i.setAttribute(e, t.nodeValue)) })), t.text && (i.text = t.text), i.hasAttribute("src") ? (i.addEventListener("load", o), i.addEventListener("error", (function () { i.setAttribute("data-rocket-status", "failed-network"), e() })), setTimeout((() => { i.isConnected || e() }), 1)) : (i.text = t.text, o()), t.parentNode.replaceChild(i, t); else { const i = t.getAttribute("data-rocket-type"), s = t.getAttribute("data-rocket-src"); i ? (t.type = i, t.removeAttribute("data-rocket-type")) : t.removeAttribute("type"), t.addEventListener("load", o), t.addEventListener("error", (i => { this.CSPIssue && i.target.src.startsWith("data:") ? (console.log("WPRocket: data-uri blocked by CSP -> fallback"), t.removeAttribute("src"), this.B(t).then(e)) : (t.setAttribute("data-rocket-status", "failed-network"), e()) })), s ? (t.removeAttribute("data-rocket-src"), t.src = s) : t.src = "data:text/javascript;base64," + window.btoa(unescape(encodeURIComponent(t.text))) } } catch (i) { t.setAttribute("data-rocket-status", "failed-transform"), e() } })); t.setAttribute("data-rocket-status", "skipped") } async A(t) { const e = t.shift(); return e && e.isConnected ? (await this.B(e), this.A(t)) : Promise.resolve() } q() { this.T([...this.delayedScripts.normal, ...this.delayedScripts.defer, ...this.delayedScripts.async], "preload") } T(t, e) { var i = document.createDocumentFragment(); t.forEach((t => { const o = t.getAttribute && t.getAttribute("data-rocket-src") || t.src; if (o && !o.startsWith("data:")) { const s = document.createElement("link"); s.href = o, s.rel = e, "preconnect" !== e && (s.as = "script"), t.getAttribute && "module" === t.getAttribute("data-rocket-type") && (s.crossOrigin = !0), t.crossOrigin && (s.crossOrigin = t.crossOrigin), t.integrity && (s.integrity = t.integrity), i.appendChild(s), this.trash.push(s) } })), document.head.appendChild(i) } j(t) { let e = {}; function i(i, o) { return e[o].eventsToRewrite.indexOf(i) >= 0 && !t.everythingLoaded ? "rocket-" + i : i } function o(t, o) { !function (t) { e[t] || (e[t] = { originalFunctions: { add: t.addEventListener, remove: t.removeEventListener }, eventsToRewrite: [] }, t.addEventListener = function () { arguments[0] = i(arguments[0], t), e[t].originalFunctions.add.apply(t, arguments) }, t.removeEventListener = function () { arguments[0] = i(arguments[0], t), e[t].originalFunctions.remove.apply(t, arguments) }) }(t), e[t].eventsToRewrite.push(o) } function s(e, i) { let o = e[i]; e[i] = null, Object.defineProperty(e, i, { get: () => o || function () { }, set(s) { t.everythingLoaded ? o = s : e["rocket" + i] = o = s } }) } o(document, "DOMContentLoaded"), o(window, "DOMContentLoaded"), o(window, "load"), o(window, "pageshow"), o(document, "readystatechange"), s(document, "onreadystatechange"), s(window, "onload"), s(window, "onpageshow"); try { Object.defineProperty(document, "readyState", { get: () => t.rocketReadyState, set(e) { t.rocketReadyState = e }, configurable: !0 }), document.readyState = "loading" } catch (t) { console.log("WPRocket DJE readyState conflict, bypassing") } } F(t) { let e; function i(e) { return t.everythingLoaded ? e : e.split(" ").map((t => "load" === t || 0 === t.indexOf("load.") ? "rocket-jquery-load" : t)).join(" ") } function o(o) { function s(t) { const e = o.fn[t]; o.fn[t] = o.fn.init.prototype[t] = function () { return this[0] === window && ("string" == typeof arguments[0] || arguments[0] instanceof String ? arguments[0] = i(arguments[0]) : "object" == typeof arguments[0] && Object.keys(arguments[0]).forEach((t => { const e = arguments[0][t]; delete arguments[0][t], arguments[0][i(t)] = e }))), e.apply(this, arguments), this } } o && o.fn && !t.allJQueries.includes(o) && (o.fn.ready = o.fn.init.prototype.ready = function (e) { return t.domReadyFired ? e.bind(document)(o) : document.addEventListener("rocket-DOMContentLoaded", (() => e.bind(document)(o))), o([]) }, s("on"), s("one"), t.allJQueries.push(o)), e = o } o(window.jQuery), Object.defineProperty(window, "jQuery", { get: () => e, set(t) { o(t) } }) } async H(t) { const e = document.querySelector("script[data-webpack]"); e && (await async function () { return new Promise((t => { e.addEventListener("load", t), e.addEventListener("error", t) })) }(), await t.K(), await t.H(t)) } async U() { this.domReadyFired = !0; try { document.readyState = "interactive" } catch (t) { } await this.G(), document.dispatchEvent(new Event("rocket-readystatechange")), await this.G(), document.rocketonreadystatechange && document.rocketonreadystatechange(), await this.G(), document.dispatchEvent(new Event("rocket-DOMContentLoaded")), await this.G(), window.dispatchEvent(new Event("rocket-DOMContentLoaded")) } async J() { try { document.readyState = "complete" } catch (t) { } await this.G(), document.dispatchEvent(new Event("rocket-readystatechange")), await this.G(), document.rocketonreadystatechange && document.rocketonreadystatechange(), await this.G(), window.dispatchEvent(new Event("rocket-load")), await this.G(), window.rocketonload && window.rocketonload(), await this.G(), this.allJQueries.forEach((t => t(window).trigger("rocket-jquery-load"))), await this.G(); const t = new Event("rocket-pageshow"); t.persisted = this.persisted, window.dispatchEvent(t), await this.G(), window.rocketonpageshow && window.rocketonpageshow({ persisted: this.persisted }), this.windowLoaded = !0 } m() { document.onreadystatechange && document.onreadystatechange(), window.onload && window.onload(), window.onpageshow && window.onpageshow({ persisted: this.persisted }) } I() { const t = new Map; document.write = document.writeln = function (e) { const i = document.currentScript; i || console.error("WPRocket unable to document.write this: " + e); const o = document.createRange(), s = i.parentElement; let n = t.get(i); void 0 === n && (n = i.nextSibling, t.set(i, n)); const c = document.createDocumentFragment(); o.setStart(c, 0), c.appendChild(o.createContextualFragment(e)), s.insertBefore(c, n) } } async G() { Date.now() - this.lastBreath > 45 && (await this.K(), this.lastBreath = Date.now()) } async K() { return document.hidden ? new Promise((t => setTimeout(t))) : new Promise((t => requestAnimationFrame(t))) } N() { this.trash.forEach((t => t.remove())) } static run() { const t = new RocketLazyLoadScripts; t.p(t) } } RocketLazyLoadScripts.run() })();</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="dns-prefetch" href="//tracker.wpserveur.net">
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v23.6 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Vidéaste de mariage - Film &amp; vidéo de mariage</title>
+	<link rel="preload" data-rocket-preload as="style"
+		href="https://fonts.googleapis.com/css?family=Proza%20Libre%3Aregular%2Cregularitalic%2C700%2C700italic%2C200%2C300%2C500%7CCormorant%20Garamond%3Aregular%7CPoppins%3Aregular%7CPrompt%3A300%2C200%2Cregular%7CCormorant%3Aregular&#038;display=swap" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Proza%20Libre%3Aregular%2Cregularitalic%2C700%2C700italic%2C200%2C300%2C500%7CCormorant%20Garamond%3Aregular%7CPoppins%3Aregular%7CPrompt%3A300%2C200%2Cregular%7CCormorant%3Aregular&#038;display=swap"
+		media="print" onload="this.media='all'" /><noscript>
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Proza%20Libre%3Aregular%2Cregularitalic%2C700%2C700italic%2C200%2C300%2C500%7CCormorant%20Garamond%3Aregular%7CPoppins%3Aregular%7CPrompt%3A300%2C200%2Cregular%7CCormorant%3Aregular&#038;display=swap" />
+	</noscript>
+	
+	<meta name="description"
+		content="Vidéaste de mariage - Créateur de vidéo de mariage | Revivre le temps d’un film, les moments les plus précieux de votre mariage." />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Vidéaste de mariage - Film &amp; vidéo de mariage" />
+	<meta property="og:description"
+		content="Vidéaste de mariage - Créateur de vidéo de mariage | Revivre le temps d’un film, les moments les plus précieux de votre mariage." />
+	<meta property="og:site_name" content="As You Are - Vidéaste de mariage" />
+	<meta property="article:modified_time" content="2024-08-06T07:50:39+00:00" />
+	<meta property="og:image:width" content="2100" />
+	<meta property="og:image:height" content="969" />
+	<meta property="og:image:type" content="image/webp" />
+	<meta name="twitter:card" content="summary_large_image" />
+
+
+	<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+	<script type="rocketlazyloadscript">document.documentElement.classList.remove( 'no-js' );</script>
+	
+	<style id='classic-theme-styles-inline-css'>
+		/*! This file is auto-generated */
+		.wp-block-button__link {
+			color: #fff;
+			background-color: #32373c;
+			border-radius: 9999px;
+			box-shadow: none;
+			text-decoration: none;
+			padding: calc(.667em + 2px) calc(1.333em + 2px);
+			font-size: 1.125em
+		}
+
+		.wp-block-file__button {
+			background: #32373c;
+			color: #fff;
+			text-decoration: none
+		}
+	</style>
+	
+	<link rel='stylesheet' href="./css/global-styles-inline.css" media='all' />
+	<link rel='stylesheet' href="./css/global.min.css" media='all' />
+	<link rel='stylesheet' href="./css/kadence-global-inline.css" media='all' />
+	<link rel='stylesheet' id='kadence-simplelightbox-css-css' href='./css/simplelightbox.min.css' media='all' />
+	<link rel='stylesheet' id='kadence-header-css' href='./css/header.min.css' media='all' />
+	<link rel='stylesheet' id='kadence-content-css' href='./css/content.min.css' media='all' />
+	<link rel='stylesheet' id='kadence-footer-css' href='./css/footer.min.css' media='all' />
+	<link data-minify="1" rel='stylesheet' id='kadence-blocks-rowlayout-css' href='./css/style-blocks-rowlayout.css' media='all' />
+	<link data-minify="1" rel='stylesheet' id='kadence-blocks-column-css' href='./css/style-blocks-column.css' media='all' />
+	<link rel='stylesheet' href="./css/kadence-blocks-advancedheading-inline.css" media='all' />
+	<link data-minify="1" rel='stylesheet' id='kadence-blocks-icon-css' href='./css/style-blocks-icon.css' media='all' />
+	<link data-minify="1" rel='stylesheet' id='kadence-blocks-advancedbtn-css' href='./css/style-blocks-advancedbtn.css' media='all' />
+	<link rel='stylesheet' id='kadence-glightbox-css' href='./css/kb-glightbox.min.css' media='all' />
+	<link data-minify="1" rel='stylesheet' id='kadence-blocks-image-css' href='./css/style-blocks-image.css' media='all' />
+	<link data-minify="1" rel='stylesheet' id='kadence-blocks-advancedgallery-css' href='./css/style-blocks-advancedgallery.css' media='all' />
+	<link data-minify="1" rel='stylesheet' id='kadence-blocks-spacer-css'href='./css/style-blocks-spacer.css'media='all' />
+	<link data-minify="1" rel='stylesheet' id='kadence-blocks-posts-css' href='./css/style-blocks-posts.css' media='all' />
+	<link data-minify="1" rel='stylesheet' id='rosewood-style-css' href='./css/style.css' media='all' />
+	<link data-minify="1" rel='stylesheet' id='rosewood-style-css' href='./css/bootstrap.min.css' media='all' />
+	<link data-minify="1" rel='stylesheet' id='rosewood-style-css' href='./css/style-min.css' media='all' />
+
+	<style id='kadence-blocks-global-variables-inline-css'>
+		:root {
+			--global-kb-font-size-sm: clamp(0.8rem, 0.73rem + 0.217vw, 0.9rem);
+			--global-kb-font-size-md: clamp(1.1rem, 0.995rem + 0.326vw, 1.25rem);
+			--global-kb-font-size-lg: clamp(1.75rem, 1.576rem + 0.543vw, 2rem);
+			--global-kb-font-size-xl: clamp(2.25rem, 1.728rem + 1.63vw, 3rem);
+			--global-kb-font-size-xxl: clamp(2.5rem, 1.456rem + 3.26vw, 4rem);
+			--global-kb-font-size-xxxl: clamp(2.75rem, 0.489rem + 7.065vw, 6rem);
+		}
+	</style>
+	<link rel='stylesheet' href="./css/kadence_blocks_css-inline.css" media='all' />
+
+	<style id='kadence_blocks_custom_css-inline-css'>
+		.kb-row-layout-id14168_61ab65-cb .vertical {
+			\n transform-origin: 0 0;
+			\n transform: rotate(-90deg);
+			\n width: 300%;
+			\n
+		}
+
+		.kb-row-layout-id14168_927441-a0 .vertical {
+			\n transform-origin: 0 0;
+			\n transform: rotate(-90deg);
+			\n width: 300%;
+			\n
+		}
+
+		.kb-row-layout-id14168_f090a5-6e {
+			#corner {
+				border-radius: 24px;
+			}
+		}
+
+		.kb-row-layout-id14168_780de6-1e.kb-row-layout-id14168_014a76-6a.kb-row-layout-id14168_8a4485-0c
+	</style>
+	<style id="kadence_blocks_palette_css">
+		:root .has-kb-palette-1-color {
+			color: #bbc8b7
+		}
+
+		:root .has-kb-palette-1-background-color {
+			background-color: #bbc8b7
+		}
+
+		:root .has-kb-palette-2-color {
+			color: #d9c6a8
+		}
+
+		:root .has-kb-palette-2-background-color {
+			background-color: #d9c6a8
+		}
+
+		:root .has-kb-palette-22-color {
+			color: #bac6ae
+		}
+
+		:root .has-kb-palette-22-background-color {
+			background-color: #bac6ae
+		}
+
+		:root .has-kb-palette-3-color {
+			color: #888888
+		}
+
+		:root .has-kb-palette-3-background-color {
+			background-color: #888888
+		}
+	</style>
+	<style>
+		#wp-admin-bar-wps-link>a:before {
+			content: url('https://www.wpserveur.net/wp-content/themes/wpserveur/img/WP.svg');
+			width: 24px;
+		}
+	</style>
+	<meta name="generator" content="Site Kit by Google 1.137.0" />
+	<link rel="icon"
+		href="./asset/logo.png"
+		sizes="32x32" />
+	<style id="wp-custom-css">
+		.approche {
+
+			letter-spacing: -3px;
+		}
+
+		.white a {
+
+			color: white;
+		}
+
+		#corner {
+			border-radius: 14px;
+		}
+
+		.corner {
+			border-radius: 14px;
+		}
+	</style>
+	<noscript>
+		<style id="rocket-lazyload-nojs-css">
+			.rll-youtube-player,
+			[data-lazy-src] {
+				display: none !important;
+			}
+		</style>
+	</noscript>
+	<style id="wpr-lazyload-bg-container"></style>
+	<script
+		type="application/javascript">const rocket_pairs = [{ "selector": ".kb-row-layout-id14168_f090a5-6e", "style": ".kb-row-layout-id14168_f090a5-6e{--wpr-bg-1c43c6e3-e6b6-4a99-a67d-750fb8ef9dfb: url('https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2024\/08\/Eleonore-Timothee-videaste-mariage-chateau-de-Wailly-Somme-Hauts-de-france-scaled.jpg');}", "hash": "1c43c6e3-e6b6-4a99-a67d-750fb8ef9dfb", "url": "https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2024\/08\/Eleonore-Timothee-videaste-mariage-chateau-de-Wailly-Somme-Hauts-de-france-scaled.jpg" }, { "selector": ".kb-row-layout-id14168_baafbe-70", "style": ".kb-row-layout-id14168_baafbe-70{--wpr-bg-f0ee88e4-382b-45a0-96b1-6360b485fb71: url('https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2022\/09\/BruneAurelien.png');}", "hash": "f0ee88e4-382b-45a0-96b1-6360b485fb71", "url": "https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2022\/09\/BruneAurelien.png" }, { "selector": ".kb-row-layout-id14168_d82c03-22", "style": ".kb-row-layout-id14168_d82c03-22{--wpr-bg-79711ed9-fe45-4d0c-966a-6d2246db3a1d: url('https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2022\/02\/Film-mariage_Anne-Camille-Alexandre.png');}", "hash": "79711ed9-fe45-4d0c-966a-6d2246db3a1d", "url": "https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2022\/02\/Film-mariage_Anne-Camille-Alexandre.png" }, { "selector": ".kb-row-layout-id14168_08b34a-4c", "style": ".kb-row-layout-id14168_08b34a-4c{--wpr-bg-3f2212eb-84db-4a4a-8e0b-ee116482a120: url('https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2023\/06\/Film-de-mariage-Sybille-Cyprien-Videaste-Mariage-Domaine-Vallon-des-Sources.jpg');}", "hash": "3f2212eb-84db-4a4a-8e0b-ee116482a120", "url": "https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2023\/06\/Film-de-mariage-Sybille-Cyprien-Videaste-Mariage-Domaine-Vallon-des-Sources.jpg" }, { "selector": ".kb-row-layout-id14168_1d6c72-41", "style": ".kb-row-layout-id14168_1d6c72-41{--wpr-bg-2f7b826f-3786-488c-80a6-2431de297470: url('https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2022\/02\/Film-mariage_Agathe-Benjamin.jpg');}", "hash": "2f7b826f-3786-488c-80a6-2431de297470", "url": "https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2022\/02\/Film-mariage_Agathe-Benjamin.jpg" }, { "selector": ".kb-row-layout-id14168_0c1eb1-c3", "style": ".kb-row-layout-id14168_0c1eb1-c3{--wpr-bg-b696a9ac-b692-4e38-83c4-6613e8507eac: url('https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2022\/02\/Film-mariage_Rebecca-Gregoire.jpg');}", "hash": "b696a9ac-b692-4e38-83c4-6613e8507eac", "url": "https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2022\/02\/Film-mariage_Rebecca-Gregoire.jpg" }, { "selector": ".kadence-column14168_f80ef2-05 > .kt-inside-inner-col", "style": ".kadence-column14168_f80ef2-05 > .kt-inside-inner-col{--wpr-bg-4623fb16-3ade-42b9-a256-126cf201fec7: url('https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2023\/05\/videaste-mariage-domaine-chateau_shooting-01.jpg');}", "hash": "4623fb16-3ade-42b9-a256-126cf201fec7", "url": "https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2023\/05\/videaste-mariage-domaine-chateau_shooting-01.jpg" }, { "selector": ".kadence-column14168_04e689-47 > .kt-inside-inner-col", "style": ".kadence-column14168_04e689-47 > .kt-inside-inner-col{--wpr-bg-bcb30331-67a1-4df9-9d30-67b740caf8a0: url('https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2023\/05\/videaste-mariage-domaine-chateau_shooting-02.jpg');}", "hash": "bcb30331-67a1-4df9-9d30-67b740caf8a0", "url": "https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2023\/05\/videaste-mariage-domaine-chateau_shooting-02.jpg" }, { "selector": ".kb-row-layout-id14168_28efe3-c4", "style": ".kb-row-layout-id14168_28efe3-c4{--wpr-bg-e7db4c78-fa56-4496-8085-c1fbc657d373: url('https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2023\/09\/background-videaste-mariage-video-film.jpg');}", "hash": "e7db4c78-fa56-4496-8085-c1fbc657d373", "url": "https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2023\/09\/background-videaste-mariage-video-film.jpg" }]; const rocket_excluded_pairs = [{ "selector": ".kb-row-layout-id14168_5de28d-f5", "style": ".kb-row-layout-id14168_5de28d-f5{--wpr-bg-772802ce-d9aa-4df5-a30f-38effa06ce59: url('https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2024\/06\/Videaste-de-mariage-Video-de-mariage-Film-de-mariage.webp');}", "hash": "772802ce-d9aa-4df5-a30f-38effa06ce59", "url": "https:\/\/www.as-you-are.fr\/wp-content\/uploads\/2024\/06\/Videaste-de-mariage-Video-de-mariage-Film-de-mariage.webp" }];</script>
+</head>
+
+<body
+	class="home page-template-default page page-id-14168 wp-custom-logo wp-embed-responsive footer-on-bottom hide-focus-outline link-style-standard content-title-style-hide content-width-normal content-style-unboxed content-vertical-padding-hide transparent-header mobile-transparent-header">
+	<div data-rocket-location-hash="9123279c435388da595274f0980df8c6" id="wrapper" class="site wp-site-blocks">
+		<a class="skip-link screen-reader-text scroll-ignore" href="#main">Aller au contenu</a>
+		<header data-rocket-location-hash="3a56c00a3bb88240211528a1e7c37130" id="masthead" class="site-header"
+			role="banner" itemtype="https://schema.org/WPHeader" itemscope>
+			<div data-rocket-location-hash="72c5022f292dd27ae452809bfb9ebe78" id="main-header" class="site-header-wrap">
+				<div class="site-header-inner-wrap">
+					<div class="site-header-upper-wrap">
+						<div class="site-header-upper-inner-wrap">
+							<div class="site-main-header-wrap site-header-row-container site-header-focus-item site-header-row-layout-standard kadence-sticky-header"
+								data-section="kadence_customizer_header_main" data-reveal-scroll-up="false"
+								data-shrink="false">
+								<div class="site-header-row-container-inner">
+									<div class="site-container">
+										<div
+											class="site-main-header-inner-wrap site-header-row site-header-row-has-sides site-header-row-center-column">
+											<div
+												class="site-header-main-section-left site-header-section site-header-section-left">
+												<div
+													class="site-header-main-section-left-center site-header-section site-header-section-left-center">
+													<div class="site-header-item site-header-focus-item site-header-item-main-navigation header-navigation-layout-stretch-false header-navigation-layout-fill-stretch-false"
+														data-section="kadence_customizer_primary_navigation">
+														<nav id="site-navigation"
+															class="main-navigation header-navigation nav--toggle-sub header-navigation-style-standard header-navigation-dropdown-animation-fade-down"
+															role="navigation" aria-label="Navigation principale">
+															<div class="primary-menu-container header-menu-container">
+																<ul id="primary-menu" class="menu">
+																	<li id="menu-item-10934"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10934">
+																		<a>À
+																			PROPOS</a></li>
+																	<li id="menu-item-13403"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13403">
+																		<a>FAQ</a>
+																	</li>
+																</ul>
+															</div>
+														</nav><!-- #site-navigation -->
+													</div><!-- data-section="primary_navigation" -->
+												</div>
+											</div>
+											<div
+												class="site-header-main-section-center site-header-section site-header-section-center">
+												<div class="site-header-item site-header-focus-item"
+													data-section="title_tagline">
+													<div
+														class="site-branding branding-layout-standard site-brand-logo-only">
+														<a class="brand has-logo-image" href="" rel="home"><img
+																width="100" height="120" src="./asset/logo.png"
+																class="custom-logo"
+																alt="Faisons Un &#8211; Vidéaste de mariage"
+																decoding="async" fetchpriority="high" /></a></div>
+												</div><!-- data-section="title_tagline" -->
+											</div>
+											<div
+												class="site-header-main-section-right site-header-section site-header-section-right">
+												<div
+													class="site-header-main-section-right-center site-header-section site-header-section-right-center">
+													<div class="site-header-item site-header-focus-item site-header-item-main-navigation header-navigation-layout-stretch-false header-navigation-layout-fill-stretch-false"
+														data-section="kadence_customizer_secondary_navigation">
+														<nav id="secondary-navigation"
+															class="secondary-navigation header-navigation nav--toggle-sub header-navigation-style-standard header-navigation-dropdown-animation-fade-down"
+															role="navigation" aria-label="Navigation secondaire">
+															<div class="secondary-menu-container header-menu-container">
+																<ul id="secondary-menu" class="menu">
+																	<li id="menu-item-10169"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10169">
+																		<a
+																			>CONTACT</a>
+																	</li>
+																	<li id="menu-item-14326"
+																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14326">
+																		<a
+																			>EVENT</a>
+																	</li>
+																</ul>
+															</div>
+														</nav><!-- #secondary-navigation -->
+													</div><!-- data-section="secondary_navigation" -->
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div data-rocket-location-hash="4141caf32ac986c5205ff6386cda4989" id="mobile-header"
+				class="site-mobile-header-wrap">
+				<div class="site-header-inner-wrap">
+					<div class="site-header-upper-wrap">
+						<div class="site-header-upper-inner-wrap">
+							<div class="site-main-header-wrap site-header-focus-item site-header-row-layout-standard site-header-row-tablet-layout-default site-header-row-mobile-layout-default  kadence-sticky-header"
+								data-shrink="false" data-reveal-scroll-up="false">
+								<div class="site-header-row-container-inner">
+									<div class="site-container">
+										<div
+											class="site-main-header-inner-wrap site-header-row site-header-row-has-sides site-header-row-center-column">
+											<div
+												class="site-header-main-section-left site-header-section site-header-section-left">
+											</div>
+											<div
+												class="site-header-main-section-center site-header-section site-header-section-center">
+												<div class="site-header-item site-header-focus-item"
+													data-section="title_tagline">
+													<div
+														class="site-branding mobile-site-branding branding-layout-standard branding-tablet-layout-standard site-brand-logo-only branding-mobile-layout-standard site-brand-logo-only">
+														<a class="brand has-logo-image"
+															 rel="home"><img
+																width="120" height="60"
+																src="./asset/logo.png"
+																class="custom-logo"
+																alt="As You Are &#8211; Vidéaste de mariage"
+																decoding="async" /></a></div>
+												</div><!-- data-section="title_tagline" -->
+											</div>
+											<div
+												class="site-header-main-section-right site-header-section site-header-section-right">
+												<div class="site-header-item site-header-focus-item site-header-item-navgation-popup-toggle"
+													data-section="kadence_customizer_mobile_trigger">
+													<div class="mobile-toggle-open-container">
+														<button id="mobile-toggle"
+															class="menu-toggle-open drawer-toggle menu-toggle-style-default"
+															aria-label="Ouvrir le menu"
+															data-toggle-target="#mobile-drawer"
+															data-toggle-body-class="showing-popup-drawer-from-right"
+															aria-expanded="false" data-set-focus=".menu-toggle-close">
+															<span class="menu-toggle-icon"><span
+																	class="kadence-svg-iconset"><svg aria-hidden="true"
+																		class="kadence-svg-icon kadence-menu-svg"
+																		fill="currentColor" version="1.1"
+																		xmlns="http://www.w3.org/2000/svg" width="24"
+																		height="24" viewBox="0 0 24 24">
+																		<title>Ouvrir/fermer le menu</title>
+																		<path
+																			d="M3 13h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 7h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 19h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1z">
+																		</path>
+																	</svg></span></span>
+														</button>
+													</div>
+												</div><!-- data-section="mobile_trigger" -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header><!-- #masthead -->
+
+		<div data-rocket-location-hash="5a2055687c0d6c1f3106160245638569" id="inner-wrap" class="wrap hfeed kt-clear">
+			<div data-rocket-location-hash="80e7b013ee3a39d5e25e1e5ef3fe01d3" id="primary" class="content-area">
+				<div class="content-container site-container">
+					<main id="main" class="site-main" role="main">
+						<div class="content-wrap">
+							<article id="post-14168"
+								class="entry content-bg single-entry post-14168 page type-page status-publish has-post-thumbnail hentry">
+								<div class="entry-content-wrap">
+
+									<div class="entry-content single-content">
+										<div
+											class="kb-row-layout-wrap kb-row-layout-id14168_e54c9c-70 alignfull kt-row-has-bg wp-block-kadence-rowlayout">
+											<div class="kb-blocks-bg-video-container"><video class="kb-blocks-bg-video"
+													id="bg-row-video-14168_e54c9c-70" playsinline muted loop
+													src="./asset/video/amandine eddy insta basse qualité.mp4"
+													poster=""
+													autoplay></video></div>
+											<div class="kt-row-layout-overlay kt-row-overlay-gradient"></div>
+											<div
+												class="kt-row-column-wrap kt-has-1-columns kt-row-layout-equal kt-tab-layout-inherit kt-mobile-layout-row kt-row-valign-top kb-theme-content-width">
+
+											
+
+											</div>
+										</div>
+
+											
+
+									
+
+
+								
+										<section class="wpo-portfolio-section section-padding">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="wpo-section-title">
+                            <span></span>
+							<span></span>
+                            <h2>Nos Travaux Exceptionnels</h2>
+                            <div class="section-title-img">
+                                <img src="assets/images/section-title.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sortable-gallery">
+                        <div class="gallery-filters"></div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="portfolio-grids gallery-container clearfix">
+                                    <div class="grid">
+                                        <div class="img-holder">
+                                            <img src="./asset/portfolio/1.jpg" alt="">
+                                            <div class="hover-content">
+                                                <h4><a href="portfolio-single.html">Maria & Robin</a></h4>
+                                                <span>2019</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid">
+                                        <div class="img-holder">
+                                            <img src="./asset/portfolio/2.jpg" alt="">
+                                            <div class="hover-content">
+                                                <h4><a href="portfolio-single.html">Rose & Harry</a></h4>
+                                                <span> 2020</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid">
+                                        <div class="img-holder">
+                                            <img src="./asset/portfolio/3.jpg" alt="">
+                                            <div class="hover-content">
+                                                <h4><a href="portfolio-single.html">Aliana & David</a></h4>
+                                                <span> 2020</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid">
+                                        <div class="img-holder">
+                                            <img src="./asset/portfolio/4.jpg" alt="">
+                                            <div class="hover-content">
+                                                <h4><a href="portfolio-single.html">Aliza & Ken</a></h4>
+                                                <span> 2020</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid">
+                                        <div class="img-holder">
+                                            <img src="./asset/portfolio/5.jpg" alt="">
+                                            <div class="hover-content">
+                                                <h4><a href="portfolio-single.html">Michel & Dianee</a></h4>
+                                                <span> 2020</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid">
+                                        <div class="img-holder">
+                                            <img src="./asset/portfolio/6.jpg" alt="">
+                                            <div class="hover-content">
+                                                <h4><a href="portfolio-single.html">Maria & Nevela</a></h4>
+                                                <span>2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- end container -->
+            </section>
+
+
+	<style id="o-anim-hide-inline-css">
+		.animated:not(.o-anim-ready) {
+			visibility: hidden;
+			animation-play-state: paused;
+			animation: none !important;
+		}
+	</style>
+	<noscript>
+		<style>
+			.animated {
+				visibility: visible;
+				animation-play-state: running;
+			}
+		</style>
+	</noscript>
+	<link data-minify="1" rel='stylesheet' id='otter-animation-css'
+		href='https://www.as-you-are.fr/wp-content/cache/min/1/wp-content/plugins/blocks-animation/build/animation/index.css?ver=1722929997'
+		media='all' />
+	<style id='core-block-supports-inline-css'>
+		.wp-elements-aa2963c4af4d24c4a4d9a18359cec62f a:where(:not(.wp-element-button)) {
+			color: var(--wp--preset--color--theme-palette-9);
+		}
+
+		.wp-elements-4a50d1a9d24d4eed6618e7fd8c8096f8 a:where(:not(.wp-element-button)) {
+			color: var(--wp--preset--color--theme-palette-9);
+		}
+
+		.wp-elements-b609613fa124f823a0b00d875fe06e57 a:where(:not(.wp-element-button)) {
+			color: var(--wp--preset--color--theme-palette-9);
+		}
+
+		.wp-elements-3023ad03d74a020d36af9851d32d703c a:where(:not(.wp-element-button)) {
+			color: var(--wp--preset--color--theme-palette-9);
+		}
+
+		.wp-elements-4d7c3f624a2b3b636c558d2d971a0aac a:where(:not(.wp-element-button)) {
+			color: var(--wp--preset--color--theme-palette-9);
+		}
+
+		.wp-elements-d579fe7e06c249a8f15cca9f8b74263e a:where(:not(.wp-element-button)) {
+			color: var(--wp--preset--color--theme-palette-9);
+		}
+
+		.wp-container-core-columns-is-layout-1 {
+			flex-wrap: nowrap;
+		}
+	</style>
+	<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+	<script id="rocket-preload-links-js-extra">
+		var RocketPreloadLinksConfig = { "excludeUris": "\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm", "siteUrl": "https:\/\/www.as-you-are.fr", "onHoverDelay": "100", "rateThrottle": "3" };
+	</script>
+	<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+	<script id="rocket_lazyload_css-js-extra">
+		var rocket_lazyload_css_data = { "threshold": "300" };
+	</script>
+	<script id="rocket_lazyload_css-js-after">
+		!function o(n, c, a) { function u(t, e) { if (!c[t]) { if (!n[t]) { var r = "function" == typeof require && require; if (!e && r) return r(t, !0); if (s) return s(t, !0); throw (e = new Error("Cannot find module '" + t + "'")).code = "MODULE_NOT_FOUND", e } r = c[t] = { exports: {} }, n[t][0].call(r.exports, function (e) { return u(n[t][1][e] || e) }, r, r.exports, o, n, c, a) } return c[t].exports } for (var s = "function" == typeof require && require, e = 0; e < a.length; e++)u(a[e]); return u }({ 1: [function (e, t, r) { "use strict"; { const c = "undefined" == typeof rocket_pairs ? [] : rocket_pairs, a = (("undefined" == typeof rocket_excluded_pairs ? [] : rocket_excluded_pairs).map(t => { var e = t.selector; document.querySelectorAll(e).forEach(e => { e.setAttribute("data-rocket-lazy-bg-" + t.hash, "excluded") }) }), document.querySelector("#wpr-lazyload-bg-container")); var o = rocket_lazyload_css_data.threshold || 300; const u = new IntersectionObserver(e => { e.forEach(t => { t.isIntersecting && c.filter(e => t.target.matches(e.selector)).map(t => { var e; t && ((e = document.createElement("style")).textContent = t.style, a.insertAdjacentElement("afterend", e), t.elements.forEach(e => { u.unobserve(e), e.setAttribute("data-rocket-lazy-bg-" + t.hash, "loaded") })) }) }) }, { rootMargin: o + "px" }); function n() { 0 < (0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : []).length && c.forEach(t => { try { document.querySelectorAll(t.selector).forEach(e => { "loaded" !== e.getAttribute("data-rocket-lazy-bg-" + t.hash) && "excluded" !== e.getAttribute("data-rocket-lazy-bg-" + t.hash) && (u.observe(e), (t.elements ||= []).push(e)) }) } catch (e) { console.error(e) } }) } n(), function () { const r = window.MutationObserver; return function (e, t) { if (e && 1 === e.nodeType) return (t = new r(t)).observe(e, { attributes: !0, childList: !0, subtree: !0 }), t } }()(document.querySelector("body"), n) } }, {}] }, {}, [1]);
+		//# sourceMappingURL=lazyload-css.min.js.map
+	</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="https://www.as-you-are.fr/wp-content/themes/kadence/assets/js/simplelightbox.min.js"
+		id="kadence-simplelightbox-js" async></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="https://www.as-you-are.fr/wp-content/themes/kadence/assets/js/lightbox-init.min.js"
+		id="kadence-lightbox-init-js" async></script>
+	<script id="kadence-navigation-js-extra">
+		var kadenceConfig = { "screenReader": { "expand": "Menu enfant", "expandOf": "Menu enfant de", "collapse": "Menu enfant", "collapseOf": "Menu enfant de" }, "breakPoints": { "desktop": "1024", "tablet": 768 }, "scrollOffset": "0" };
+	</script>
+	<script src="https://www.as-you-are.fr/wp-content/themes/kadence/assets/js/navigation.min.js"
+		id="kadence-navigation-js" async></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="https://www.as-you-are.fr/wp-content/plugins/kadence-blocks/includes/assets/js/glightbox.min.js"
+		id="kadence-glightbox-js"></script>
+	<script id="kadence-blocks-glight-video-init-js-extra">
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+		var kadence_video_pop = { "plyr_js": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/js\/plyr.min.js", "plyr_css": "https:\/\/www.as-you-are.fr\/wp-content\/plugins\/kadence-blocks\/includes\/assets\/css\/plyr.min.css" };
+	</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="https://www.as-you-are.fr/wp-content/plugins/kadence-blocks/includes/assets/js/kb-glight-video-init.min.js"
+		id="kadence-blocks-glight-video-init-js"></script>
+	<script type="rocketlazyloadscript" data-rocket-src="https://www.as-you-are.fr/wp-includes/js/imagesloaded.min.js"
+		id="imagesloaded-js"></script>
+	<script type="rocketlazyloadscript" data-rocket-src="https://www.as-you-are.fr/wp-includes/js/masonry.min.js"
+		id="masonry-js"></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="https://www.as-you-are.fr/wp-content/plugins/kadence-blocks/includes/assets/js/kb-masonry-init.min.js"
+		id="kadence-blocks-masonry-init-js"></script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="https://www.as-you-are.fr/wp-content/plugins/kadence-blocks/includes/assets/js/jarallax.min.js"
+		id="jarallax-js"></script>
+	<script id="kadence-blocks-parallax-js-js-extra">
+		var kadence_blocks_parallax = { "speed": "-0.1" };
+	</script>
+	<script type="rocketlazyloadscript"
+		data-rocket-src="https://www.as-you-are.fr/wp-content/plugins/kadence-blocks/includes/assets/js/kt-init-parallax.min.js"
+		id="kadence-blocks-parallax-js-js"></script>
+	<script type="rocketlazyloadscript" data-minify="1"
+		data-rocket-src="https://www.as-you-are.fr/wp-content/cache/min/1/wp-content/plugins/blocks-animation/build/animation/frontend.js?ver=1722929997"
+		id="otter-animation-frontend-js" async></script>
+	<script>window.lazyLoadOptions = [{ elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, callback_loaded: function (element) { if (element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible") { if (element.classList.contains("lazyloaded")) { if (typeof window.jQuery != "undefined") { if (jQuery.fn.fitVids) { jQuery(element).parent().fitVids() } } } } } }, { elements_selector: ".rocket-lazyload", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, }]; window.addEventListener('LazyLoad::Initialized', function (e) {
+			var lazyLoadInstance = e.detail.instance; if (window.MutationObserver) {
+				var observer = new MutationObserver(function (mutations) {
+					var image_count = 0; var iframe_count = 0; var rocketlazy_count = 0; mutations.forEach(function (mutation) {
+						for (var i = 0; i < mutation.addedNodes.length; i++) {
+							if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') { continue }
+							if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') { continue }
+							images = mutation.addedNodes[i].getElementsByTagName('img'); is_image = mutation.addedNodes[i].tagName == "IMG"; iframes = mutation.addedNodes[i].getElementsByTagName('iframe'); is_iframe = mutation.addedNodes[i].tagName == "IFRAME"; rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload'); image_count += images.length; iframe_count += iframes.length; rocketlazy_count += rocket_lazy.length; if (is_image) { image_count += 1 }
+							if (is_iframe) { iframe_count += 1 }
+						}
+					}); if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) { lazyLoadInstance.update() }
+				}); var b = document.getElementsByTagName("body")[0]; var config = { childList: !0, subtree: !0 }; observer.observe(b, config)
+			}
+		}, !1)</script>
+	<script data-no-minify="1" async
+		src="https://www.as-you-are.fr/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+	<script>var rocket_beacon_data = { "ajax_url": "https:\/\/www.as-you-are.fr\/wp-admin\/admin-ajax.php", "nonce": "2f2e64727b", "url": "https:\/\/www.as-you-are.fr", "is_mobile": false, "width_threshold": 1600, "height_threshold": 700, "delay": 500, "debug": null, "status": { "atf": true, "lrc": true }, "elements": "img, video, picture, p, main, div, li, svg, section, header, span", "lrc_threshold": 1800 }</script>
+	<script data-name="wpr-wpr-beacon"
+		src='https://www.as-you-are.fr/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js' async></script>
+		<script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- Plugins for this template -->
+    <script src="./js/modernizr.custom.js"></script>
+    <script src="./js/jquery.dlmenu.js"></script>
+    <script src="./js/jquery-plugin-collection.js"></script>
+    <!-- Custom script for this template -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1736433702 -->
